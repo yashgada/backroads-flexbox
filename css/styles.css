@@ -147,26 +147,26 @@ p {
   color: var(--clr-primary-1);
   background: var(--clr-primary-8);
 }
-.section{
+.section {
   padding: 5rem 0;
 }
-.section-title{
+.section-title {
   text-align: center;
   margin-bottom: 4rem;
 }
-.section-title h2{
+.section-title h2 {
   text-transform: uppercase;
 }
-.section-title span{
+.section-title span {
   color: var(--clr-primary-5);
 }
-.section-center{
+.section-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
 }
-@media screen and (min-width:992px){
-  .section-center{
+@media screen and (min-width: 992px) {
+  .section-center {
     width: 95%;
   }
 }
@@ -219,10 +219,10 @@ Hero
     background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
       url("../images/main.jpeg") center/cover no-repeat;
   }
-  .hero-banner{
+  .hero-banner {
     padding: 0;
   }
-  .hero-banner p{
+  .hero-banner p {
     max-width: 45rem;
   }
 }
@@ -235,28 +235,30 @@ About
 /* section add to globals */
 /* title add to globals */
 /* section center add to globals */
-.about-img,.about-info{
+.about-img,
+.about-info {
   margin-bottom: 2rem;
 }
-@media screen and (min-width:992px){
-  .about-center{
+@media screen and (min-width: 992px) {
+  .about-center {
     display: flex;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
   }
-.about-img,.about-info{
-  flex: 0 0 calc(50% - 2rem);
-  margin-bottom: 0;
-  /* center the image and paragraph in the two column layour */
-  align-self: center;
+  .about-img,
+  .about-info {
+    flex: 0 0 calc(50% - 2rem);
+    margin-bottom: 0;
+    /* center the image and paragraph in the two column layour */
+    align-self: center;
+  }
 }
-}
-@media screen and (min-width:1170px){
-  .about-img{
+@media screen and (min-width: 1170px) {
+  .about-img {
     /* Need to set this div's position to relative for the before pseudo element to work */
     position: relative;
   }
-  .about-img::before{
+  .about-img::before {
     /* firstly, need to set content, else it won't show anything */
     content: "";
     position: absolute;
@@ -266,12 +268,13 @@ About
     height: 100%;
     /* height: 100%; */
     box-sizing: border-box;
-    top:-1.5rem;
-    left:-1.5rem;
+    top: -1.5rem;
+    left: -1.5rem;
     /* z-index: -1; */
   }
-  .about-photo{
-    position: absolute; /* TRY TO COMMENT THIS*/
+  .about-photo {
+    position: relative;
+    /* Not sure why this works here, asked John for it */
     /* In this case, position can also be set to inherit */
   }
 }
@@ -280,13 +283,123 @@ About
 Services
 ===============
 */
-
+.services {
+  background: var(--clr-grey-10);
+}
+.service {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.service-icon {
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-1);
+  padding: 0.5rem;
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.service-text {
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 576px) {
+  .services-center{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .service{
+    flex: 0 0 calc(50% - 1rem);
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .service{
+    flex: 0 0 calc(33.33% - 2rem);
+  }
+}
+@media screen and (min-width: 1170px) {
+  .service{
+    display: flex;
+    text-align: left;
+  }
+  .service-icon{
+    align-self: flex-start;
+  }
+  .service-info{
+    padding-left: 1rem;
+  }
+  .service-title{
+    margin-bottom: 0.5rem;
+  }
+}
 /*
 =============== 
 Featured Tours
 ===============
 */
+.tour-card{
+  transition: var(--transition);
+  background: var(--clr-grey-10);
+  box-shadow: var(--light-shadow);
+  margin-bottom: 2rem;
+}
+.tour-card:hover{
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.02);
+}
+.tour-img-container{
+  position: relative;
+}
+.tour-img{
+  height: 15rem;
+  object-fit: cover;
+}
+.tour-date{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--clr-primary-7);
+  margin-bottom: 0;
+  color: var(--clr-primary-1);
+  text-transform: capitalize;
+  padding: 0.25rem 0.75rem;
+}
+.tour-info{
+  padding: 1.25rem 1.5rem;
+}
+.tour-footer{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.tour-footer p{
+  line-height: 0;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  color: var(--clr-primary-5);
+}
+.tour-btn{
+  text-align: center;
+}
 
+@media screen and (min-width: 768px){
+  .featured-center{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .tour-card{
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 1170px){
+  .tour-card{
+    flex: 0 0 calc(33.33% - 3rem);
+  }
+}
 /*
 =============== 
 Contact
