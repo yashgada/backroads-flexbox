@@ -400,6 +400,16 @@ Featured Tours
     flex: 0 0 calc(33.33% - 3rem);
   }
 }
+.tour-heading{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tour-heading p,.tour-heading h4{
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+  /* commenting this margin-bottom seems to increase the size of the h4 element itself */
+}
 /*
 =============== 
 Contact
