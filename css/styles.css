@@ -194,6 +194,53 @@ Navbar
   max-width: 1170px;
   margin: 0 auto;
 }
+.nav-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.nav-toggle{
+  border: transparent;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-toggle:hover{
+transform: scale(1.5);
+}
+.nav-link{
+  display: block;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+  color: var(--clr-grey-1);
+  cursor: pointer;
+}
+.nav-link:hover{
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+  padding-left: 2.25rem;
+}
+
+/* 280px */
+.nav-links{
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links{
+  height: 280px;
+}
+
+
+/* * {
+  border: 1px solid red;
+} */
 /*
 =============== 
 Hero
@@ -584,7 +631,4 @@ Footer
   text-transform: capitalize;
   letter-spacing: var(--spacing);
   color: var(--clr-white);
-}
-* {
-  border: 1px solid red;
 }
